@@ -1,0 +1,27 @@
+
+GET http://localhost:3000/ HTTP/1.1
+
+###
+
+GET http://localhost:3000/api/ HTTP/1.1
+
+###
+
+GET http://localhost:3000/api/search HTTP/1.1
+
+###
+
+GET http://localhost:3000/api/spaghetti HTTP/1.1
+
+###
+
+GET http://localhost:3000/api/axiosSearch/q=shoese&location=Austin,+Texas,+United+States&hl=en&gl=us&google_domain=google.com
+###
+
+POST http://localhost:3000/api/search HTTP/1.1
+content-type: application/json
+
+{
+    "q": "coffee",
+    "location": "Austin, Texas, United States"
+}
