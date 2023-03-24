@@ -20,6 +20,18 @@ app.get("/", (req, res) => {
     res.status(200).json({ message: "hello world!" });
   });
 
+app.get("/search", async (req, res) => {
+  const params = {...req.query};
+  try {
+    const data = await getJson("google", params);
+    res.locals.result = data;
+    res.status(200);
+  } catch (error) {
+    console.log(error)
+    res.status(400);
+  }
+})
+
 
 app.use("/api/", router);
 

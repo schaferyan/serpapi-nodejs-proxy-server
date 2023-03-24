@@ -1,5 +1,5 @@
 import * as express from "express";
-import {search, keywordSearch, axiosSearch, getResults} from './search.js';
+import {search, keywordSearch, getResults} from './search.js';
 import dotenv from "dotenv";
 dotenv.config();
 
