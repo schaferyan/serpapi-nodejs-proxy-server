@@ -9,19 +9,11 @@ router.get("/", (req, res) => {
   res.status(200).json({ message: "default get request" });
 });
 
-router.get("/search", (req, res) => {
-    res.status(200).json({ message: "search" });
-});
-
 router.get("/keyword-search/:keyword", keywordSearch, (req, res) => {
     res.status(200).json(res.locals.result);
 });
 
-router.get("/axios-search/:url", axiosSearch, (req, res) => {
-    res.status(200).json(res.locals.result);
-});
-
-router.get("/query", getResults, (req, res) => {
+router.get("/search", getResults, (req, res) => {
     res.status(200).json(res.locals.result); 
 });
 
