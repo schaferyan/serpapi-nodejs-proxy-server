@@ -1,14 +1,17 @@
 import express, { json } from "express";
 import dotenv from "dotenv";
-dotenv.config();
-import router from "./routes.js"
 import { config} from "serpapi";
+import cors from "cors";
+import router from "./routes.js"
 
+
+dotenv.config();
+// console.log(process.env);
 config.api_key = process.env.SERPAPI_KEY;
-// const cors = require('cors');
+
 
 const app = express();
-// app.use(cors);
+app.use(cors());
 app.use(json());
 
 const PORT = process.env.PORT || 3000;

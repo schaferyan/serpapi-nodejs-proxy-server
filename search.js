@@ -47,3 +47,18 @@ export async function axiosSearch(req, res, next) {
   }
   next();
 }
+
+export async function getResults(req, res, next){
+  const params = {...req.query};
+  try {
+    console.log(req.query);
+    console.log(params)
+    const data = await getJson("google", params);
+    res.locals.result = data;
+    res.status(200);
+  } catch (error) {
+    console.log(error)
+    res.status(400);
+  }
+  next();
+}

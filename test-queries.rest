@@ -11,11 +11,10 @@ GET http://localhost:3000/api/search HTTP/1.1
 
 ###
 
-GET http://localhost:3000/api/spaghetti HTTP/1.1
-
+GET http://localhost:3000/api/axios-search/q=shoes&location=Austin,+Texas,+United+States&hl=en&gl=us&google_domain=google.com
 ###
 
-GET http://localhost:3000/api/axiosSearch/q=shoese&location=Austin,+Texas,+United+States&hl=en&gl=us&google_domain=google.com
+GET http://localhost:3000/api/query/?q=seeds&location=Austin,+Texas,+United+States&hl=en&gl=us&google_domain=google.com
 ###
 
 POST http://localhost:3000/api/search HTTP/1.1
