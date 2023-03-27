@@ -4,7 +4,7 @@ dotenv.config();
 
 const API_KEY = process.env.SERPAPI_KEY;
 
-export async function search(req, res, next) {
+export async function postResults(req, res, next) {
   const params = req.body;
   try {
     const data = await getJson("google", params);
