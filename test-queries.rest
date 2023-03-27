@@ -7,7 +7,7 @@ GET http://localhost:3000/api/ HTTP/1.1
 
 ###
 
-GET http://localhost:3000/search/?q=seeds&location=Austin,+Texas,+United+States&hl=en&gl=us&google_domain=google.com
+GET http://localhost:3000/keyword-search/chocolate
 ###
 
 GET http://localhost:3000/search/?q=seeds&location=Austin,+Texas,+United+States&hl=en&gl=us&google_domain=google.com

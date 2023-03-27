@@ -5,33 +5,17 @@ dotenv.config();
 const API_KEY = process.env.SERPAPI_KEY;
 
 export async function postResults(req, res, next) {
-  const params = req.body;
-  try {
-    const data = await getJson("google", params);
-    res.locals.result = data;
-    res.status(200);
-  } catch {
-    res.status(400);
-  }
+  req.params = { ...req.body };
   next();
 }
 
-export async function keywordSearch(req, res, next) {
-  const params = {};
-  params.q = req.params.keyword;
-  try {
-    const data = await getJson("google", params);
-    res.locals.result = data;
-    res.status(200);
-  } catch {
-    res.status(400);
-  }
+export async function getResults(req, res, next) {
+  req.params = req.query;
   next();
 }
 
-
-export async function getResults(req, res, next){
-  const params = {...req.query};
+export async function search(req, res, next) {
+  const params = req.params;
   try {
     const data = await getJson("google", params);
     res.locals.result = data;
@@ -43,16 +27,4 @@ export async function getResults(req, res, next){
   next();
 }
 
-export async function search(req, res, next){
-  const params = req.query.length > 0 ? {...req.query} : req.body;
-  console.log(params);
-  try {
-    const data = await getJson("google", params);
-    res.locals.result = data;
-    res.status(200);
-  } catch (error) {
-    console.log(error)
-    res.status(400);
-  }
-  next();
-}
+
