@@ -10,4 +10,10 @@ Make sure you have the lastest version of Node and npm.
 4. Copy your [API key](https://serpapi.com/manage-api-key) and paste it into your `.env` file
 5. Run `npm install` to install all dependencies.
 6. (Optional) If using VSCode, install the [REST Client extension](https://marketplace.visualstudio.com/items?itemName=humao.rest-client). This is helpful for testing routes.
-6. Start the server by running `npm start`
+7. Set the Access-Control-Allow-Origin-Header to the name of the domain you will be querying the proxy server from by editing line 15 of `server.js`:
+
+```
+app.use(cors({ origin: "http://yourdomain.com" }));
+```
+
+8. Start the server by running `npm start`
