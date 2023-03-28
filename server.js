@@ -18,11 +18,11 @@ app.use(json());
 const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-  res.status(200).json({ message: "hello world!" });
+  res.status(200).json({ message: "response to default get request" });
 });
 
-app.get("/", (req, res) => {
-  res.status(200).json({ message: "default get request" });
+app.get("/another-route", (req, res) => {
+  res.status(200).json({ message: "here is another route" });
 });
 
 app.get("/keyword-search/:q", search, (req, res) => {
